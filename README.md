@@ -1,5 +1,6 @@
 # Gamerule Manager
 A Spigot Plugin for Minecraft Servers
+
 Spigot URL: https://www.spigotmc.org/resources/gamerules-manager-1-13-1-19.102215/
 
 Description:
