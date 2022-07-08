@@ -3,7 +3,7 @@ A Spigot Plugin for Minecraft Servers
 
 Spigot URL: https://www.spigotmc.org/resources/gamerules-manager-1-13-1-19.102215/
 
-Description:
+![image](https://user-images.githubusercontent.com/17084358/177983497-7e63109c-c3a4-4051-824e-093abd640e08.png)
 
 With this Plugin Server owners and administrators can manage the gamerules of a world via GUI. 
 It's very easy, they can change values with only one click. 
