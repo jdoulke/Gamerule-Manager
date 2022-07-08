@@ -1,0 +1,11 @@
+name: GamerulesManager
+version: 1.7
+main: me.ted2001.gamerulesmanager.GameruleManager
+api-version: 1.13
+authors: [ Ted_2001 ]
+description: Manage worlds gamerules via gui.
+commands:
+  gamerulemanager:
+    description: Open GUI Manager.
+    permission: gamerulemanager.use
+    aliases: [mgamerule,ggamerule]
