@@ -3,6 +3,8 @@ A Spigot Plugin for Minecraft Servers
 
 Spigot URL: https://www.spigotmc.org/resources/gamerules-manager-1-13-1-19.102215/
 
+Stats from the users using this plugin: https://bstats.org/plugin/bukkit/GamerulesManager/15346
+
 Description
 
 With this Plugin Server owners and administrators can manage the gamerules of a world via GUI. 
@@ -21,5 +23,5 @@ Screenshots:
 ![image](https://user-images.githubusercontent.com/17084358/177982187-8f5ea439-879d-4bd2-a9e6-a5d8adbc413d.png)
 
 
-Stats from the users using this plugin: https://bstats.org/plugin/bukkit/GamerulesManager/15346
+
 
