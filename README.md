@@ -3,7 +3,7 @@ A Spigot Plugin for Minecraft Servers
 
 Spigot URL: https://www.spigotmc.org/resources/gamerules-manager-1-13-1-19.102215/
 
-Stats from the users using this plugin: https://bstats.org/plugin/bukkit/GamerulesManager/15346
+Stats from users using this plugin: https://bstats.org/plugin/bukkit/GamerulesManager/15346
 
 Description
 
