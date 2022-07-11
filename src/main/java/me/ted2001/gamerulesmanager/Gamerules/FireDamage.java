@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class FireDamage {
 
     public FireDamage(){}
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack fireDamage(CommandSender sender) {
 
         Player p = (Player) sender;

@@ -16,7 +16,7 @@ public class AnnounceAdvancements {
 
     public AnnounceAdvancements(){}
 
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack announceAdvancementz(CommandSender sender){
         Player p = (Player) sender;
         //get player's world

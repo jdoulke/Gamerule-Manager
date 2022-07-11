@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class DoLimitedCrafting {
 
     public DoLimitedCrafting(){}
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doLimitedCrafting(CommandSender sender) {
 
         Player p = (Player) sender;

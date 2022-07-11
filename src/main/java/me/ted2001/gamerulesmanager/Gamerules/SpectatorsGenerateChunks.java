@@ -18,7 +18,7 @@ public class SpectatorsGenerateChunks {
     public SpectatorsGenerateChunks() {
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack spectatorsGenerateChunks(CommandSender sender) {
 
         Player p = (Player) sender;

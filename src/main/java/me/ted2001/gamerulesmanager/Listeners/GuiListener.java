@@ -43,7 +43,7 @@ public class GuiListener implements Listener {
             if (e.getView().getTitle().equalsIgnoreCase(ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager")) {
                 Inventory gui = e.getClickedInventory();
                 Player p = (Player) e.getWhoClicked();
-                GameruleGetter Getter = new GameruleGetter(p, world.getWorldSelected());
+                GameruleGetter Getter = new GameruleGetter(p);
                 World playerworld = world.getWorldSelected();
                 if (e.getCurrentItem() == null)
                     return;

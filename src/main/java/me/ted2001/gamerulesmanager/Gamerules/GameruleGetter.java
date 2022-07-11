@@ -7,7 +7,6 @@ import org.bukkit.inventory.ItemStack;
 public class GameruleGetter {
 
     Player p;
-    World w;
 
     AnnounceAdvancements AnnounceAdvancements = new AnnounceAdvancements();
     CommandBlockOutput CommandBlockOutput = new CommandBlockOutput();
@@ -46,7 +45,7 @@ public class GameruleGetter {
     PlayersSleepingPercentage PlayersSleepingPercentage = new PlayersSleepingPercentage();
     DoWardenSpawning DoWardenSpawning = new DoWardenSpawning();
 
-    public GameruleGetter(Player player, World w){this.p = player;this.w = w;}
+    public GameruleGetter(Player player){this.p = player;}
 
     public ItemStack announceAdvancements(){
         return AnnounceAdvancements.announceAdvancementz(p);

@@ -17,7 +17,7 @@ public class DoFireTick {
     public DoFireTick(){
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doFireTick(CommandSender sender){
 
         Player p = (Player) sender;

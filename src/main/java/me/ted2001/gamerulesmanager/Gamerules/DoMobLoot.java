@@ -17,7 +17,7 @@ public class DoMobLoot {
     public DoMobLoot(){
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doMobLoot(CommandSender sender) {
 
         Player p = (Player) sender;

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class PlayersSleepingPercentage {
 
     public PlayersSleepingPercentage(){}
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack playersSleepingPercentage(CommandSender sender) {
 
         Player p = (Player) sender;

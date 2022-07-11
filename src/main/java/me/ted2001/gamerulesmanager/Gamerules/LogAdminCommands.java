@@ -17,7 +17,7 @@ public class LogAdminCommands {
     public LogAdminCommands(){
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack logAdminCommands(CommandSender sender) {
 
         Player p = (Player) sender;

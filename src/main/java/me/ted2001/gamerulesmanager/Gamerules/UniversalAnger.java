@@ -16,7 +16,7 @@ public class UniversalAnger {
 
 
     public UniversalAnger(){}
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack universalAnger(CommandSender sender) {
 
         Player p = (Player) sender;

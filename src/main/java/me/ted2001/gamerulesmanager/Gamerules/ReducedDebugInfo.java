@@ -17,7 +17,7 @@ public class ReducedDebugInfo {
     public ReducedDebugInfo() {
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack reducedDebugInfo(CommandSender sender) {
 
         Player p = (Player) sender;

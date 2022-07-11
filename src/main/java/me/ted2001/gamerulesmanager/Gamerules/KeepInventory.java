@@ -18,7 +18,7 @@ public class KeepInventory {
     public KeepInventory(){
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack keepInventory(CommandSender sender) {
 
         Player p = (Player) sender;

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class DoTraderSpawning {
 
     public DoTraderSpawning(){}
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doTraderSpawning(CommandSender sender) {
 
         Player p = (Player) sender;

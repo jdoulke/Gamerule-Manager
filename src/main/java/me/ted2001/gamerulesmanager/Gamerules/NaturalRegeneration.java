@@ -17,7 +17,7 @@ public class NaturalRegeneration {
     public NaturalRegeneration(){
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack naturalRegeneration(CommandSender sender) {
 
         Player p = (Player) sender;

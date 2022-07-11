@@ -17,7 +17,7 @@ public class DoEntityDrops {
     public DoEntityDrops(){
 
     }
-    private WorldSelectorListener world;
+    private WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doEntityDrops(CommandSender sender){
         Player p = (Player) sender;
 
