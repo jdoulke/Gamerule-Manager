@@ -7,7 +7,7 @@
 
     <groupId>me.Ted2001</groupId>
     <artifactId>GamerulesGUI</artifactId>
-    <version>1.7</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
 
     <name>GamerulesGUI</name>

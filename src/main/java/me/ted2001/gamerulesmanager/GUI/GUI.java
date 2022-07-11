@@ -1,15 +1,13 @@
 package me.ted2001.gamerulesmanager.GUI;
 
 import me.ted2001.gamerulesmanager.Gamerules.GameruleGetter;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GUI {
@@ -27,7 +25,7 @@ public class GUI {
         }
         GameruleGetter Getter = new GameruleGetter(w);
         //sizes 9,18,27,36,45,54
-        Inventory gui = Bukkit.createInventory(p, 36, ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager");
+        Inventory gui = Bukkit.createInventory(p, 45, ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager");
 
         //add items from the Gamerules classes.
         gui.setItem(0, Getter.announceAdvancements());
@@ -91,6 +89,8 @@ public class GUI {
             gui.setItem(35, Getter.doWardenSpawning());
         }
 
+        gui.setItem(37, backButton());
+
         return gui;
     }
 
@@ -140,5 +140,16 @@ public class GUI {
         }
 
         return null;
+    }
+
+    private ItemStack backButton(){
+        ArrayList<String> lore = new ArrayList<>();
+        ItemStack backButton = new ItemStack(Material.REDSTONE_BLOCK,1);
+        ItemMeta backButtonmeta = backButton.getItemMeta();
+        backButtonmeta.setDisplayName(ChatColor.RED + "Get Back in World Selection.");
+        backButtonmeta.setLore(lore);
+        backButton.setItemMeta(backButtonmeta);
+
+        return backButton;
     }
 }

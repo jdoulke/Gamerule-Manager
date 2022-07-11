@@ -1,7 +1,6 @@
 package me.ted2001.gamerulesmanager.Listeners;
 
 
-import me.ted2001.gamerulesmanager.Commands.GuiCommand;
 import me.ted2001.gamerulesmanager.GUI.GUI;
 import me.ted2001.gamerulesmanager.Gamerules.*;
 import me.ted2001.gamerulesmanager.GameruleManager;
@@ -17,14 +16,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
+import static me.ted2001.gamerulesmanager.Listeners.WorldSelectorListener.WorldSelected;
+
 @SuppressWarnings({"IfStatementWithIdenticalBranches", "ConstantConditions", "RedundantSuppression"})
 public class GuiListener implements Listener {
 
     String prefix = ChatColor.RED + "" + "[" + ChatColor.GREEN + "" +"Gamerule  Manager" + ChatColor.RED + "" + "] ";
 
-    private final GuiCommand GuiCommand = new GuiCommand();
-    private GUI gui = new GUI();
-    private WorldSelectorListener world;
+    private final GUI GUI = new GUI();
+    public final WorldSelectorListener world = new WorldSelectorListener();
 
 
     @SuppressWarnings("rawtypes")
@@ -35,19 +35,21 @@ public class GuiListener implements Listener {
 
 
 
-    @SuppressWarnings("CatchMayIgnoreException")
     @EventHandler
     public void onGuiClick(InventoryClickEvent e) {
 
         try {
             if (e.getView().getTitle().equalsIgnoreCase(ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager")) {
+                //players can not move items
+                e.setCancelled(true);
                 Inventory gui = e.getClickedInventory();
                 Player p = (Player) e.getWhoClicked();
-                World playerworld = world.getWorldSelected();
+                p.sendMessage("geia");
+                p.sendMessage(WorldSelected.getName());
+                World playerworld = WorldSelected;
                 GameruleGetter Getter = new GameruleGetter(playerworld);
                 if (e.getCurrentItem() == null)
                     return;
-
                 if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "announceAdvancements")) {
                     if (playerworld.getGameRuleValue(GameRule.ANNOUNCE_ADVANCEMENTS)) {
                         booleanGameruleSet(GameRule.ANNOUNCE_ADVANCEMENTS, false, playerworld, p);
@@ -311,11 +313,11 @@ public class GuiListener implements Listener {
                         booleanGameruleSet(GameRule.DO_WARDEN_SPAWNING, true, playerworld, p);
                         gui.setItem(35, Getter.doWardenSpawning());
                     }
+                }else if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "Get Back in World Selection.")) {
+                        GUI.guiBuilder(p);
                 }
 
 
-                //players can not move items
-                e.setCancelled(true);
             }
             //for 1.13 NullPointerException if you click air
         }catch (NullPointerException ex) { }
@@ -330,29 +332,29 @@ public class GuiListener implements Listener {
                     }catch (NumberFormatException ex){
                         player.sendMessage(prefix + ChatColor.YELLOW + "You didn't type an " + ChatColor.RED + "integer number" + ChatColor.YELLOW +".");
                         p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 1);
-                        return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
+                        return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
                     }
                     switch (gamerule) {
                         case "randomTickSpeed":
                             w.setGameRule(GameRule.RANDOM_TICK_SPEED, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
                         case "spawnRadius":
                             w.setGameRule(GameRule.SPAWN_RADIUS, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
                         case "maxEntityCramming":
                             w.setGameRule(GameRule.MAX_ENTITY_CRAMMING, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
                         case "maxCommandChainLength":
                             w.setGameRule(GameRule.MAX_COMMAND_CHAIN_LENGTH, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
                         case "playersSleepingPercentage":
                                 w.setGameRule(GameRule.PLAYERS_SLEEPING_PERCENTAGE, value);
                                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                                return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
+                                return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
                         }
                     return null;
                 })
