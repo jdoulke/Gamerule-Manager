@@ -1,5 +1,6 @@
 package me.ted2001.gamerulesmanager.Gamerules;
 
+import me.ted2001.gamerulesmanager.Listeners.WorldSelectorListener;
 import org.bukkit.ChatColor;
 import org.bukkit.GameRule;
 import org.bukkit.Material;
@@ -13,14 +14,13 @@ import java.util.ArrayList;
 
 public class AnnounceAdvancements {
 
-    public AnnounceAdvancements(){
+    public AnnounceAdvancements(){}
 
-    }
-
+    private WorldSelectorListener world;
     public ItemStack announceAdvancementz(CommandSender sender){
         Player p = (Player) sender;
         //get player's world
-        World playerworld = p.getWorld();
+        World playerworld = world.getWorldSelected();
 
 
 

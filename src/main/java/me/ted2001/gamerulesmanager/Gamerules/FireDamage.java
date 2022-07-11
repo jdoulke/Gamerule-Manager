@@ -1,5 +1,6 @@
 package me.ted2001.gamerulesmanager.Gamerules;
 
+import me.ted2001.gamerulesmanager.Listeners.WorldSelectorListener;
 import org.bukkit.ChatColor;
 import org.bukkit.GameRule;
 import org.bukkit.Material;
@@ -14,12 +15,12 @@ import java.util.ArrayList;
 public class FireDamage {
 
     public FireDamage(){}
-
+    private WorldSelectorListener world;
     public ItemStack fireDamage(CommandSender sender) {
 
         Player p = (Player) sender;
 
-        World playerworld = p.getWorld();
+        World playerworld = world.getWorldSelected();
 
         ArrayList<String> lore = new ArrayList<>();
 

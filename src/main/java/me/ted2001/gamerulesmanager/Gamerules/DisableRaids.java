@@ -1,5 +1,6 @@
 package me.ted2001.gamerulesmanager.Gamerules;
 
+import me.ted2001.gamerulesmanager.Listeners.WorldSelectorListener;
 import org.bukkit.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -13,11 +14,11 @@ public class DisableRaids {
     public DisableRaids(){
 
     }
-
+    private WorldSelectorListener world;
     public ItemStack disableRaids(CommandSender sender){
             Player p = (Player) sender;
 
-            World playerworld = p.getWorld();
+            World playerworld = world.getWorldSelected();
 
             ArrayList<String> lore = new ArrayList<>();
 

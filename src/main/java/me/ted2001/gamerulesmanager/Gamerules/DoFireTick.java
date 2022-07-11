@@ -1,5 +1,6 @@
 package me.ted2001.gamerulesmanager.Gamerules;
 
+import me.ted2001.gamerulesmanager.Listeners.WorldSelectorListener;
 import org.bukkit.ChatColor;
 import org.bukkit.GameRule;
 import org.bukkit.Material;
@@ -16,12 +17,12 @@ public class DoFireTick {
     public DoFireTick(){
 
     }
-
+    private WorldSelectorListener world;
     public ItemStack doFireTick(CommandSender sender){
 
         Player p = (Player) sender;
 
-        World playerworld = p.getWorld();
+        World playerworld = world.getWorldSelected();
 
         ArrayList<String> lore = new ArrayList<>();
         ItemStack doFireTick = new ItemStack(Material.FLINT_AND_STEEL,1);

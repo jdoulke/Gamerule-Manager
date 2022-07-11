@@ -1,11 +1,13 @@
 package me.ted2001.gamerulesmanager.Gamerules;
 
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class GameruleGetter {
 
     Player p;
+    World w;
 
     AnnounceAdvancements AnnounceAdvancements = new AnnounceAdvancements();
     CommandBlockOutput CommandBlockOutput = new CommandBlockOutput();
@@ -44,9 +46,7 @@ public class GameruleGetter {
     PlayersSleepingPercentage PlayersSleepingPercentage = new PlayersSleepingPercentage();
     DoWardenSpawning DoWardenSpawning = new DoWardenSpawning();
 
-    public GameruleGetter(Player player){
-        this.p = player;
-    }
+    public GameruleGetter(Player player, World w){this.p = player;this.w = w;}
 
     public ItemStack announceAdvancements(){
         return AnnounceAdvancements.announceAdvancementz(p);

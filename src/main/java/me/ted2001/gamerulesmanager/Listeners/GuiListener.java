@@ -2,6 +2,7 @@ package me.ted2001.gamerulesmanager.Listeners;
 
 
 import me.ted2001.gamerulesmanager.Commands.GuiCommand;
+import me.ted2001.gamerulesmanager.GUI.GUI;
 import me.ted2001.gamerulesmanager.Gamerules.*;
 import me.ted2001.gamerulesmanager.GameruleManager;
 import net.wesjd.anvilgui.AnvilGUI;
@@ -22,6 +23,8 @@ public class GuiListener implements Listener {
     String prefix = ChatColor.RED + "" + "[" + ChatColor.GREEN + "" +"Gamerule  Manager" + ChatColor.RED + "" + "] ";
 
     private final GuiCommand GuiCommand = new GuiCommand();
+    private GUI gui;
+    private WorldSelectorListener world;
 
 
     @SuppressWarnings("rawtypes")
@@ -37,11 +40,11 @@ public class GuiListener implements Listener {
     public void onGuiClick(InventoryClickEvent e) {
 
         try {
-            if (e.getView().getTitle().equalsIgnoreCase(ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule Gui Manager")) {
+            if (e.getView().getTitle().equalsIgnoreCase(ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager")) {
                 Inventory gui = e.getClickedInventory();
                 Player p = (Player) e.getWhoClicked();
-                GameruleGetter Getter = new GameruleGetter(p);
-                World playerworld = p.getWorld();
+                GameruleGetter Getter = new GameruleGetter(p, world.getWorldSelected());
+                World playerworld = world.getWorldSelected();
                 if (e.getCurrentItem() == null)
                     return;
 
@@ -327,29 +330,29 @@ public class GuiListener implements Listener {
                     }catch (NumberFormatException ex){
                         player.sendMessage(prefix + ChatColor.YELLOW + "You didn't type an " + ChatColor.RED + "integer number" + ChatColor.YELLOW +".");
                         p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 1);
-                        return AnvilGUI.Response.openInventory(GuiCommand.guiBuilder(p));
+                        return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
                     }
                     switch (gamerule) {
                         case "randomTickSpeed":
                             w.setGameRule(GameRule.RANDOM_TICK_SPEED, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GuiCommand.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
                         case "spawnRadius":
                             w.setGameRule(GameRule.SPAWN_RADIUS, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GuiCommand.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
                         case "maxEntityCramming":
                             w.setGameRule(GameRule.MAX_ENTITY_CRAMMING, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GuiCommand.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
                         case "maxCommandChainLength":
                             w.setGameRule(GameRule.MAX_COMMAND_CHAIN_LENGTH, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GuiCommand.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
                         case "playersSleepingPercentage":
                                 w.setGameRule(GameRule.PLAYERS_SLEEPING_PERCENTAGE, value);
                                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                                return AnvilGUI.Response.openInventory(GuiCommand.guiBuilder(p));
+                                return AnvilGUI.Response.openInventory(gui.guiBuilder(p));
                         }
                     return null;
                 })
