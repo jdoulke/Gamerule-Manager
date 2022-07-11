@@ -17,7 +17,7 @@ public class DoImmediateRespawn {
     public DoImmediateRespawn(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doImmediateRespawn(CommandSender sender){
 
         Player p = (Player) sender;

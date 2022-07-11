@@ -17,7 +17,7 @@ public class DoMobSpawning {
     public DoMobSpawning(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doMobSpawning(CommandSender sender) {
 
         Player p = (Player) sender;

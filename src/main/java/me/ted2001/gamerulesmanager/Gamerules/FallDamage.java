@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class FallDamage {
 
     public FallDamage(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack fallDamage(CommandSender sender) {
 
         Player p = (Player) sender;

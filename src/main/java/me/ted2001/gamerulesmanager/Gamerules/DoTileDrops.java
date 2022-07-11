@@ -17,7 +17,7 @@ public class DoTileDrops {
     public DoTileDrops(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doTileDrops(CommandSender sender) {
 
         Player p = (Player) sender;

@@ -17,7 +17,7 @@ public class CommandBlockOutput {
     public CommandBlockOutput(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack commandBlockOutput(CommandSender sender){
 
         Player p = (Player) sender;

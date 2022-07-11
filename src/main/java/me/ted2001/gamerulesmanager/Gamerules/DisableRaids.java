@@ -14,7 +14,7 @@ public class DisableRaids {
     public DisableRaids(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack disableRaids(CommandSender sender){
             Player p = (Player) sender;
 

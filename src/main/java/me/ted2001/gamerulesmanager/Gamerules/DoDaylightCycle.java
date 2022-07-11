@@ -17,7 +17,7 @@ public class DoDaylightCycle {
     public DoDaylightCycle(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doDaylightCycle(CommandSender sender){
         Player p = (Player) sender;
 

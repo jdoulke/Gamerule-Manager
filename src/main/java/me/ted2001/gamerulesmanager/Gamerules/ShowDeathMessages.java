@@ -17,7 +17,7 @@ public class ShowDeathMessages {
      public ShowDeathMessages(){
 
      }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack showDeathMessages(CommandSender sender) {
 
         Player p = (Player) sender;

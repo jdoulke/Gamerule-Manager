@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class MaxEntityCramming {
 
     public MaxEntityCramming(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack maxEntityCramming(CommandSender sender) {
 
         Player p = (Player) sender;

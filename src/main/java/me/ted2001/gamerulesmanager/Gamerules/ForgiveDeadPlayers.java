@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ForgiveDeadPlayers {
 
     public ForgiveDeadPlayers(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack forgiveDeadPlayers(CommandSender sender) {
 
         Player p = (Player) sender;

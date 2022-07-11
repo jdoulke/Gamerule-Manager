@@ -16,7 +16,7 @@ public class DrowningDamage {
 
 
     public DrowningDamage(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack drowningDamage(CommandSender sender) {
 
         Player p = (Player) sender;

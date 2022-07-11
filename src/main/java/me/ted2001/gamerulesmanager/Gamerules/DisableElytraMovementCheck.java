@@ -17,7 +17,7 @@ public class DisableElytraMovementCheck {
     public DisableElytraMovementCheck(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack DisableElytraMovementCheck(CommandSender sender){
 
         Player p = (Player) sender;

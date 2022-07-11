@@ -17,7 +17,7 @@ public class SendCommandFeedback {
     public SendCommandFeedback(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack sendCommandFeedback(CommandSender sender) {
 
         Player p = (Player) sender;

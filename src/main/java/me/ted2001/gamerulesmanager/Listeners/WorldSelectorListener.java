@@ -43,15 +43,13 @@ public class WorldSelectorListener implements Listener {
                 if(clickitem.equalsIgnoreCase("GRASS_BLOCK") || clickitem.equalsIgnoreCase("NETHERRACK") || clickitem.equalsIgnoreCase("END_STONE")) {
                     world_name = ChatColor.stripColor(e.getCurrentItem().getItemMeta().getDisplayName());
                     World world = Bukkit.getServer().getWorld(world_name);
-                    setWorldSelected(world);
-                    p.sendMessage(getWorldSelected().getName());
-                    p.openInventory(gameruleSetterGui(p));
+                    p.openInventory(gameruleSetterGui(p,world));
                 }
 
             }
         } catch (NullPointerException ex) {}
     }
-    public Inventory gameruleSetterGui(Player p) {
+    public Inventory gameruleSetterGui(Player p,World w) {
         String version = Bukkit.getBukkitVersion();
         //1.18.2-R01-SNAPSHOT //1.8.2
         String Serverversion;
@@ -61,7 +59,7 @@ public class WorldSelectorListener implements Listener {
             p.sendMessage(ChatColor.YELLOW + "This plugin doesn't support your server version " + ChatColor.RED + version + ChatColor.YELLOW + ".");
             return null;
         }
-        GameruleGetter Getter = new GameruleGetter(p);
+        GameruleGetter Getter = new GameruleGetter(w);
         //sizes 9,18,27,36,45,54
         Inventory gui = Bukkit.createInventory(p, 36, ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager");
 
@@ -90,7 +88,7 @@ public class WorldSelectorListener implements Listener {
         gui.setItem(21, Getter.doLimitedCrafting());
         gui.setItem(22, Getter.maxCommandChainLength());
 
-        /*
+
         //gamerules from 1.14
         if (Integer.parseInt(Serverversion) >= 14)
             gui.setItem(23, Getter.disableRaids());
@@ -125,7 +123,7 @@ public class WorldSelectorListener implements Listener {
         //gamerule from 1.19
         if (Integer.parseInt(Serverversion) >= 19) {
             gui.setItem(35, Getter.doWardenSpawning());
-        }*/
+        }
 
         return gui;
     }

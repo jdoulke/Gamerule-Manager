@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class FreezeDamage {
 
     public FreezeDamage(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack freezeDamage(CommandSender sender) {
 
         Player p = (Player) sender;

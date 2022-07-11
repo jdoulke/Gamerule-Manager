@@ -17,7 +17,7 @@ public class DoWardenSpawning {
     public DoWardenSpawning(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doWardenSpawning(CommandSender sender) {
         Player p = (Player) sender;
 

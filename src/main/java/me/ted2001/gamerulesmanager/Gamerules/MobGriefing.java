@@ -17,7 +17,7 @@ public class MobGriefing {
     public MobGriefing(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack mobGriefing(CommandSender sender) {
 
         Player p = (Player) sender;

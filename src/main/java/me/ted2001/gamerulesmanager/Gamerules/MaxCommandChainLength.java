@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class MaxCommandChainLength {
 
     public MaxCommandChainLength(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack maxCommandChainLength(CommandSender sender) {
 
         Player p = (Player) sender;

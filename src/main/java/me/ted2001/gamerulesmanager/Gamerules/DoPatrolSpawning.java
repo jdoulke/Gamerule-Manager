@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class DoPatrolSpawning {
 
     public DoPatrolSpawning(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doPatrolSpawning(CommandSender sender) {
 
         Player p = (Player) sender;

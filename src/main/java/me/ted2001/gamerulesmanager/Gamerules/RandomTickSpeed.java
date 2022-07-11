@@ -17,7 +17,7 @@ public class RandomTickSpeed {
     public RandomTickSpeed(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack randomTickSpeed(CommandSender sender){
         Player p = (Player) sender;
 

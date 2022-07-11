@@ -17,7 +17,7 @@ public class DoInsomnia {
     public DoInsomnia(){
 
     }
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack doInsomnia(CommandSender sender) {
 
         Player p = (Player) sender;

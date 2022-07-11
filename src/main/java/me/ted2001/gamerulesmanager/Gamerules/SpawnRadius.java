@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class SpawnRadius {
 
     public SpawnRadius(){}
-    private WorldSelectorListener world = new WorldSelectorListener();
+    private final WorldSelectorListener world = new WorldSelectorListener();
     public ItemStack spawnRadius(CommandSender sender) {
 
         Player p = (Player) sender;
