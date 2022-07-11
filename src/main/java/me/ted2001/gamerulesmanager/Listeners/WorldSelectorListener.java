@@ -18,7 +18,7 @@ public class WorldSelectorListener implements Listener {
     }
 
     public World WorldSelected;
-    private GUI GUI;
+    private GUI GUI = new GUI();
 
     @EventHandler
     public void onGuiClick(InventoryClickEvent e) {
@@ -26,14 +26,14 @@ public class WorldSelectorListener implements Listener {
             if (e.getView().getTitle().equalsIgnoreCase(ChatColor.AQUA + "" + ChatColor.BOLD + "Worlds Selector")) {
                 if (e.getCurrentItem() == null)
                     return;
+                e.setCancelled(true);
                 Inventory gui = e.getClickedInventory();
                 Player p = (Player) e.getWhoClicked();
                 String world_name = e.getCursor().toString();
                 World world = Bukkit.getWorld(world_name);
                 WorldSelected = world;
-                p.closeInventory();
                 p.openInventory(GUI.gameruleSetterGui(p,world));
-                e.setCancelled(true);
+
             }
         } catch (NullPointerException ex) {}
     }

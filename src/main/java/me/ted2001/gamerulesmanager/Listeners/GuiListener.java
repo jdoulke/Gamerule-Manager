@@ -23,7 +23,7 @@ public class GuiListener implements Listener {
     String prefix = ChatColor.RED + "" + "[" + ChatColor.GREEN + "" +"Gamerule  Manager" + ChatColor.RED + "" + "] ";
 
     private final GuiCommand GuiCommand = new GuiCommand();
-    private GUI gui;
+    private GUI gui = new GUI();
     private WorldSelectorListener world;
 
 

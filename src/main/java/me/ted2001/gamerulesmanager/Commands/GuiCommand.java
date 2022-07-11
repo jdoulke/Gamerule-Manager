@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class GuiCommand implements CommandExecutor {
 
-    private GUI GUI;
+    private GUI GUI = new GUI();
 
     public GuiCommand(){}
 
