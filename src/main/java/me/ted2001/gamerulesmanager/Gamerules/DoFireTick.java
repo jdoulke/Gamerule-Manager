@@ -18,11 +18,10 @@ public class DoFireTick {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doFireTick(CommandSender sender){
+    public ItemStack doFireTick(World w){
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
         ItemStack doFireTick = new ItemStack(Material.FLINT_AND_STEEL,1);

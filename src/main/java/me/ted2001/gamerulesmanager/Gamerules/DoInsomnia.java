@@ -18,11 +18,10 @@ public class DoInsomnia {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doInsomnia(CommandSender sender) {
+    public ItemStack doInsomnia(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

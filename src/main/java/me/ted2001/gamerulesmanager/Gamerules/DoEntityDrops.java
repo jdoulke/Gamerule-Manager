@@ -18,10 +18,9 @@ public class DoEntityDrops {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doEntityDrops(CommandSender sender){
-        Player p = (Player) sender;
+    public ItemStack doEntityDrops(World w){
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

@@ -16,11 +16,10 @@ public class ForgiveDeadPlayers {
 
     public ForgiveDeadPlayers(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack forgiveDeadPlayers(CommandSender sender) {
+    public ItemStack forgiveDeadPlayers(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

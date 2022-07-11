@@ -18,12 +18,10 @@ public class FallDamage {
 
     public FallDamage(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack fallDamage(CommandSender sender) {
+    public ItemStack fallDamage(World w){
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
-
+        World playerworld = w;
         ArrayList<String> lore = new ArrayList<>();
 
         ItemStack fallDamage = new ItemStack(Material.DIAMOND_BOOTS);

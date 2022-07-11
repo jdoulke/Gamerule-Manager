@@ -15,7 +15,7 @@ import java.util.List;
 public class GUI {
 
 
-    public Inventory gameruleSetterGui(Player p) {
+    public Inventory gameruleSetterGui(Player p,World w) {
         String version = Bukkit.getBukkitVersion();
         //1.18.2-R01-SNAPSHOT //1.8.2
         String Serverversion;
@@ -25,7 +25,7 @@ public class GUI {
             p.sendMessage(ChatColor.YELLOW + "This plugin doesn't support your server version " + ChatColor.RED + version + ChatColor.YELLOW + ".");
             return null;
         }
-        GameruleGetter Getter = new GameruleGetter(p);
+        GameruleGetter Getter = new GameruleGetter(w);
         //sizes 9,18,27,36,45,54
         Inventory gui = Bukkit.createInventory(p, 36, ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager");
 

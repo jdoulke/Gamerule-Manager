@@ -17,11 +17,10 @@ public class UniversalAnger {
 
     public UniversalAnger(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack universalAnger(CommandSender sender) {
+    public ItemStack universalAnger(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

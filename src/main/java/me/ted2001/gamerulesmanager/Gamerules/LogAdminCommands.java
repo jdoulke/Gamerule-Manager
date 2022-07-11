@@ -18,11 +18,10 @@ public class LogAdminCommands {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack logAdminCommands(CommandSender sender) {
+    public ItemStack logAdminCommands(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

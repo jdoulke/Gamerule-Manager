@@ -19,11 +19,10 @@ public class KeepInventory {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack keepInventory(CommandSender sender) {
+    public ItemStack keepInventory(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

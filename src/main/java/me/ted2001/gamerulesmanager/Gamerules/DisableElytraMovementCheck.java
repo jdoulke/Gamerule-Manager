@@ -18,11 +18,10 @@ public class DisableElytraMovementCheck {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack DisableElytraMovementCheck(CommandSender sender){
+    public ItemStack DisableElytraMovementCheck(World w){
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

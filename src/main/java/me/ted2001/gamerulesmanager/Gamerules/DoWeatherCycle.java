@@ -15,11 +15,9 @@ import java.util.ArrayList;
 public class DoWeatherCycle {
     public DoWeatherCycle(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doWeatherCycle(CommandSender sender) {
+    public ItemStack doWeatherCycle(World w) {
 
-        Player p = (Player) sender;
-
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

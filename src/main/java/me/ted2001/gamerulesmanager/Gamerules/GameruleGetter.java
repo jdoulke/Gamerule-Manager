@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class GameruleGetter {
 
-    Player p;
+    World w;
 
     AnnounceAdvancements AnnounceAdvancements = new AnnounceAdvancements();
     CommandBlockOutput CommandBlockOutput = new CommandBlockOutput();
@@ -45,77 +45,75 @@ public class GameruleGetter {
     PlayersSleepingPercentage PlayersSleepingPercentage = new PlayersSleepingPercentage();
     DoWardenSpawning DoWardenSpawning = new DoWardenSpawning();
 
-    public GameruleGetter(Player player){this.p = player;}
+    public GameruleGetter(World w){this.w = w;}
 
     public ItemStack announceAdvancements(){
-        return AnnounceAdvancements.announceAdvancementz(p);
+        return AnnounceAdvancements.announceAdvancementz(w);
     }
     public ItemStack commandBlockOutput(){
-        return CommandBlockOutput.commandBlockOutput(p);
+        return CommandBlockOutput.commandBlockOutput(w);
     }
-    public ItemStack disableElytraMovementCheck(){return DisableElytraMovementCheck.DisableElytraMovementCheck(p);}
+    public ItemStack disableElytraMovementCheck(){return DisableElytraMovementCheck.DisableElytraMovementCheck(w);}
     public ItemStack disableRaids(){
-        return DisableRaids.disableRaids(p);
+        return DisableRaids.disableRaids(w);
     }
     public ItemStack daylightCycle(){
-        return DoDaylightCycle.doDaylightCycle(p);
+        return DoDaylightCycle.doDaylightCycle(w);
     }
-    public ItemStack doFireTick(){
-        return DoFireTick.doFireTick(p);
-    }
+    public ItemStack doFireTick(){return DoFireTick.doFireTick(w);}
     public ItemStack entityDrops(){
-        return DoEntityDrops.doEntityDrops(p);
+        return DoEntityDrops.doEntityDrops(w);
     }
     public ItemStack doInsomnia(){
-        return DoInsomnia.doInsomnia(p);
+        return DoInsomnia.doInsomnia(w);
     }
     public ItemStack doImmediateRespawn(){
-        return DoImmediateRespawn.doImmediateRespawn(p);
+        return DoImmediateRespawn.doImmediateRespawn(w);
     }
     public ItemStack mobGriefing(){
-        return MobGriefing.mobGriefing(p);
+        return MobGriefing.mobGriefing(w);
     }
     public ItemStack doMobSpawning(){
-        return DoMobSpawning.doMobSpawning(p);
+        return DoMobSpawning.doMobSpawning(w);
     }
     public ItemStack doMobLoot(){
-        return DoMobLoot.doMobLoot(p);
+        return DoMobLoot.doMobLoot(w);
     }
     public ItemStack doTileDrops(){
-        return DoTileDrops.doTileDrops(p);
+        return DoTileDrops.doTileDrops(w);
     }
     public ItemStack keepInventory(){
-        return KeepInventory.keepInventory(p);
+        return KeepInventory.keepInventory(w);
     }
     public ItemStack naturalRegeneration(){
-        return NaturalRegeneration.naturalRegeneration(p);
+        return NaturalRegeneration.naturalRegeneration(w);
     }
     public ItemStack logAdminCommands(){
-        return LogAdminCommands.logAdminCommands(p);
+        return LogAdminCommands.logAdminCommands(w);
     }
     public ItemStack showDeathMessages(){
-        return ShowDeathMessages.showDeathMessages(p);
+        return ShowDeathMessages.showDeathMessages(w);
     }
     public ItemStack sendCommandFeedback(){
-        return SendCommandFeedback.sendCommandFeedback(p);
+        return SendCommandFeedback.sendCommandFeedback(w);
     }
-    public ItemStack randomTickSpeed() {return RandomTickSpeed.randomTickSpeed(p);}
-    public ItemStack reducedDebugInfo() {return ReducedDebugInfo.reducedDebugInfo(p);}
-    public ItemStack spectatorsGenerateChunks() {return SpectatorsGenerateChunks.spectatorsGenerateChunks(p);}
-    public ItemStack spawnRadius() {return SpawnRadius.spawnRadius(p);}
-    public ItemStack doWeatherCycle() {return DoWeatherCycle.doWeatherCycle(p);}
-    public ItemStack maxEntityCramming() {return MaxEntityCramming.maxEntityCramming(p);}
-    public ItemStack doLimitedCrafting(){return DoLimitedCrafting.doLimitedCrafting(p);}
-    public ItemStack maxCommandChainLength(){return MaxCommandChainLength.maxCommandChainLength(p);}
-    public ItemStack drowningDamage(){return DrowningDamage.drowningDamage(p);}
-    public ItemStack fireDamage(){return FireDamage.fireDamage(p);}
-    public ItemStack fallDamage(){return FallDamage.fallDamage(p);}
-    public ItemStack doPatrolSpawning(){return DoPatrolSpawning.doPatrolSpawning(p);}
-    public ItemStack doTraderSpawning(){return DoTraderSpawning.doTraderSpawning(p);}
-    public ItemStack universalAnger(){return UniversalAnger.universalAnger(p);}
-    public ItemStack forgiveDeadPlayers() {return ForgiveDeadPlayers.forgiveDeadPlayers(p);}
-    public ItemStack freezeDamage(){return FreezeDamage.freezeDamage(p);}
-    public ItemStack playersSleepingPercentage(){return PlayersSleepingPercentage.playersSleepingPercentage(p);}
+    public ItemStack randomTickSpeed() {return RandomTickSpeed.randomTickSpeed(w);}
+    public ItemStack reducedDebugInfo() {return ReducedDebugInfo.reducedDebugInfo(w);}
+    public ItemStack spectatorsGenerateChunks() {return SpectatorsGenerateChunks.spectatorsGenerateChunks(w);}
+    public ItemStack spawnRadius() {return SpawnRadius.spawnRadius(w);}
+    public ItemStack doWeatherCycle() {return DoWeatherCycle.doWeatherCycle(w);}
+    public ItemStack maxEntityCramming() {return MaxEntityCramming.maxEntityCramming(w);}
+    public ItemStack doLimitedCrafting(){return DoLimitedCrafting.doLimitedCrafting(w);}
+    public ItemStack maxCommandChainLength(){return MaxCommandChainLength.maxCommandChainLength(w);}
+    public ItemStack drowningDamage(){return DrowningDamage.drowningDamage(w);}
+    public ItemStack fireDamage(){return FireDamage.fireDamage(w);}
+    public ItemStack fallDamage(){return FallDamage.fallDamage(w);}
+    public ItemStack doPatrolSpawning(){return DoPatrolSpawning.doPatrolSpawning(w);}
+    public ItemStack doTraderSpawning(){return DoTraderSpawning.doTraderSpawning(w);}
+    public ItemStack universalAnger(){return UniversalAnger.universalAnger(w);}
+    public ItemStack forgiveDeadPlayers() {return ForgiveDeadPlayers.forgiveDeadPlayers(w);}
+    public ItemStack freezeDamage(){return FreezeDamage.freezeDamage(w);}
+    public ItemStack playersSleepingPercentage(){return PlayersSleepingPercentage.playersSleepingPercentage(w);}
 
-    public ItemStack doWardenSpawning(){return DoWardenSpawning.doWardenSpawning(p);}
+    public ItemStack doWardenSpawning(){return DoWardenSpawning.doWardenSpawning(w);}
 }

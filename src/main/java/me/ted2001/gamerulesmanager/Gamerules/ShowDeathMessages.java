@@ -18,11 +18,10 @@ public class ShowDeathMessages {
 
      }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack showDeathMessages(CommandSender sender) {
+    public ItemStack showDeathMessages(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

@@ -16,11 +16,10 @@ public class DoLimitedCrafting {
 
     public DoLimitedCrafting(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doLimitedCrafting(CommandSender sender) {
+    public ItemStack doLimitedCrafting(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

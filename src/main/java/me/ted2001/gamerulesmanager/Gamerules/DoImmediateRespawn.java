@@ -18,11 +18,10 @@ public class DoImmediateRespawn {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doImmediateRespawn(CommandSender sender){
+    public ItemStack doImmediateRespawn(World w){
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
         ItemStack doImmediateRespawn = new ItemStack(Material.TOTEM_OF_UNDYING,1);

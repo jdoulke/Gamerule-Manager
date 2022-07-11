@@ -16,11 +16,10 @@ public class SpawnRadius {
 
     public SpawnRadius(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack spawnRadius(CommandSender sender) {
+    public ItemStack spawnRadius(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
 
         ArrayList<String> lore = new ArrayList<>();

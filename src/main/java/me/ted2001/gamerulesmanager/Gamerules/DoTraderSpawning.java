@@ -16,12 +16,10 @@ public class DoTraderSpawning {
 
     public DoTraderSpawning(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doTraderSpawning(CommandSender sender) {
+    public ItemStack doTraderSpawning(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
-
+        World playerworld = w;
         ArrayList<String> lore = new ArrayList<>();
 
         ItemStack doTraderSpawning = new ItemStack(Material.WANDERING_TRADER_SPAWN_EGG);

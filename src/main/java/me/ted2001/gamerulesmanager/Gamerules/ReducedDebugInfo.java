@@ -18,11 +18,10 @@ public class ReducedDebugInfo {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack reducedDebugInfo(CommandSender sender) {
+    public ItemStack reducedDebugInfo(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

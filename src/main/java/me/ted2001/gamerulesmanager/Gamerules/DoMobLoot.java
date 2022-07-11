@@ -18,11 +18,9 @@ public class DoMobLoot {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doMobLoot(CommandSender sender) {
+    public ItemStack doMobLoot(World w) {
 
-        Player p = (Player) sender;
-
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

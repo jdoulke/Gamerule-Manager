@@ -18,11 +18,10 @@ public class NaturalRegeneration {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack naturalRegeneration(CommandSender sender) {
+    public ItemStack naturalRegeneration(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

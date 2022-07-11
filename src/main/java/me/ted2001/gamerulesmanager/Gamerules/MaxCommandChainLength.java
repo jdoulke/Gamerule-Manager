@@ -16,11 +16,10 @@ public class MaxCommandChainLength {
 
     public MaxCommandChainLength(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack maxCommandChainLength(CommandSender sender) {
+    public ItemStack maxCommandChainLength(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
 
         ArrayList<String> lore = new ArrayList<>();

@@ -18,10 +18,7 @@ public class DoWardenSpawning {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doWardenSpawning(CommandSender sender) {
-        Player p = (Player) sender;
-
-        World playerworld = world.getWorldSelected();
+    public ItemStack doWardenSpawning(World w) {
 
         ArrayList<String> lore = new ArrayList<>();
 
@@ -30,7 +27,7 @@ public class DoWardenSpawning {
         ItemMeta doWardenSpawningmeta = doWardenSpawning.getItemMeta();
 
         doWardenSpawningmeta.setDisplayName(ChatColor.RED + "doWardenSpawning");
-        if (playerworld.getGameRuleValue(GameRule.DO_WARDEN_SPAWNING)) {
+        if (w.getGameRuleValue(GameRule.DO_WARDEN_SPAWNING)) {
             lore.add("Gamerule is currently set to: " + ChatColor.GREEN + "" + ChatColor.BOLD + "True");
 
         } else {

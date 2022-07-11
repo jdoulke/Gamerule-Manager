@@ -16,11 +16,10 @@ public class DoPatrolSpawning {
 
     public DoPatrolSpawning(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack doPatrolSpawning(CommandSender sender) {
+    public ItemStack doPatrolSpawning(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

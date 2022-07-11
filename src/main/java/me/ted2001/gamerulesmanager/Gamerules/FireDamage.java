@@ -16,11 +16,10 @@ public class FireDamage {
 
     public FireDamage(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack fireDamage(CommandSender sender) {
+    public ItemStack fireDamage(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 

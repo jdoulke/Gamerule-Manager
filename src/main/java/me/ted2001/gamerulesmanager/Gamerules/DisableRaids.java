@@ -15,10 +15,9 @@ public class DisableRaids {
 
     }
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack disableRaids(CommandSender sender){
-            Player p = (Player) sender;
+    public ItemStack disableRaids(World w){
 
-            World playerworld = world.getWorldSelected();
+            World playerworld = w;
 
             ArrayList<String> lore = new ArrayList<>();
 

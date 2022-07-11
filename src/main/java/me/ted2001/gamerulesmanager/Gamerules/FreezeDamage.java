@@ -16,11 +16,10 @@ public class FreezeDamage {
 
     public FreezeDamage(){}
     private final WorldSelectorListener world = new WorldSelectorListener();
-    public ItemStack freezeDamage(CommandSender sender) {
+    public ItemStack freezeDamage(World w) {
 
-        Player p = (Player) sender;
 
-        World playerworld = world.getWorldSelected();
+        World playerworld = w;
 
         ArrayList<String> lore = new ArrayList<>();
 
