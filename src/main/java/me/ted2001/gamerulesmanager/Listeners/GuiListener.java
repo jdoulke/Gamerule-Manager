@@ -44,8 +44,6 @@ public class GuiListener implements Listener {
                 e.setCancelled(true);
                 Inventory gui = e.getClickedInventory();
                 Player p = (Player) e.getWhoClicked();
-                p.sendMessage("geia");
-                p.sendMessage(WorldSelected.getName());
                 World playerworld = WorldSelected;
                 GameruleGetter Getter = new GameruleGetter(playerworld);
                 if (e.getCurrentItem() == null)
@@ -314,7 +312,8 @@ public class GuiListener implements Listener {
                         gui.setItem(35, Getter.doWardenSpawning());
                     }
                 }else if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "Get Back in World Selection.")) {
-                        GUI.guiBuilder(p);
+                        p.openInventory(GUI.guiBuilder(p));
+                        p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 1, 1);
                 }
 
 
@@ -324,7 +323,7 @@ public class GuiListener implements Listener {
     }
 
     private void valueReceiver(Player p, String gamerule) {
-        World w = p.getWorld();
+        World w = WorldSelected;
         new AnvilGUI.Builder().onComplete((player, text) -> {
                     int value;
                     try{
@@ -332,29 +331,29 @@ public class GuiListener implements Listener {
                     }catch (NumberFormatException ex){
                         player.sendMessage(prefix + ChatColor.YELLOW + "You didn't type an " + ChatColor.RED + "integer number" + ChatColor.YELLOW +".");
                         p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 1);
-                        return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
+                        return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                     }
                     switch (gamerule) {
                         case "randomTickSpeed":
                             w.setGameRule(GameRule.RANDOM_TICK_SPEED, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "spawnRadius":
                             w.setGameRule(GameRule.SPAWN_RADIUS, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "maxEntityCramming":
                             w.setGameRule(GameRule.MAX_ENTITY_CRAMMING, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "maxCommandChainLength":
                             w.setGameRule(GameRule.MAX_COMMAND_CHAIN_LENGTH, value);
                             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                            return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
+                            return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "playersSleepingPercentage":
                                 w.setGameRule(GameRule.PLAYERS_SLEEPING_PERCENTAGE, value);
                                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-                                return AnvilGUI.Response.openInventory(GUI.guiBuilder(p));
+                                return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         }
                     return null;
                 })

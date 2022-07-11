@@ -2,10 +2,7 @@ package me.ted2001.gamerulesmanager.Listeners;
 
 import me.ted2001.gamerulesmanager.GUI.GUI;
 import me.ted2001.gamerulesmanager.Gamerules.GameruleGetter;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -33,7 +30,7 @@ public class WorldSelectorListener implements Listener {
     @EventHandler
     public void onGuiClick(InventoryClickEvent e) {
         try {
-            if (e.getView().getTitle().equalsIgnoreCase(ChatColor.AQUA + "" + ChatColor.BOLD + "Worlds Selector")) {
+            if (e.getView().getTitle().equalsIgnoreCase(ChatColor.AQUA + "" + ChatColor.BOLD + "World Selector")) {
                 if (e.getCurrentItem() == null)
                     return;
                 e.setCancelled(true);
@@ -44,10 +41,8 @@ public class WorldSelectorListener implements Listener {
                     world_name = ChatColor.stripColor(e.getCurrentItem().getItemMeta().getDisplayName());
                     World world = Bukkit.getServer().getWorld(world_name);
                     setWorldSelected(world);
-                    p.updateInventory();
-                    p.closeInventory();
+                    p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 1, 1);
                     p.openInventory(GUI.gameruleSetterGui(p,world));
-                    p.updateInventory();
                 }
 
             }

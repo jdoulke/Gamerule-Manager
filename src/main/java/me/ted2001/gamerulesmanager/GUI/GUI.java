@@ -89,13 +89,13 @@ public class GUI {
             gui.setItem(35, Getter.doWardenSpawning());
         }
 
-        gui.setItem(37, backButton());
+        gui.setItem(36, backButton());
 
         return gui;
     }
 
     public Inventory guiBuilder(Player p) {
-        Inventory world_selector = Bukkit.createInventory(p, 36, ChatColor.AQUA + "" + ChatColor.BOLD + "Worlds Selector");
+        Inventory world_selector = Bukkit.createInventory(p, 36, ChatColor.AQUA + "" + ChatColor.BOLD + "World Selector");
         List<World> worlds = Bukkit.getWorlds();
         String worldtype;
         for (World world : worlds) {
@@ -143,11 +143,9 @@ public class GUI {
     }
 
     private ItemStack backButton(){
-        ArrayList<String> lore = new ArrayList<>();
         ItemStack backButton = new ItemStack(Material.REDSTONE_BLOCK,1);
         ItemMeta backButtonmeta = backButton.getItemMeta();
         backButtonmeta.setDisplayName(ChatColor.RED + "Get Back in World Selection.");
-        backButtonmeta.setLore(lore);
         backButton.setItemMeta(backButtonmeta);
 
         return backButton;

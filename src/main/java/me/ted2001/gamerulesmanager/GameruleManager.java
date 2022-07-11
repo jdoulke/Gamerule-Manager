@@ -18,7 +18,7 @@ public final class GameruleManager extends JavaPlugin {
     public void onEnable() {
 
         plugin = this;
-        getCommand("gamerulemanager").setExecutor(new GuiCommand());
+        getCommand("gamerule").setExecutor(new GuiCommand());
         getServer().getPluginManager().registerEvents(new GuiListener(), this);
         getServer().getPluginManager().registerEvents(new WorldSelectorListener(), this);
         new UpdateChecker(this, 102215).getVersion(version -> {

@@ -5,7 +5,7 @@ api-version: 1.13
 authors: [ Ted_2001 ]
 description: Manage worlds gamerules via gui.
 commands:
-  gamerulemanager:
+  gamerule:
     description: Open GUI Manager.
     permission: gamerulemanager.use
-    aliases: [mgamerule,ggamerule,gamerule,gamerules]
+    aliases: [mgamerule,ggamerule,gamerules,gamerulemanager]
