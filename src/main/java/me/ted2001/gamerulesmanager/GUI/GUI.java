@@ -25,7 +25,7 @@ public class GUI {
         }
         GameruleGetter Getter = new GameruleGetter(w);
         //sizes 9,18,27,36,45,54
-        Inventory gui = Bukkit.createInventory(p, 45, ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager");
+        Inventory gui = Bukkit.createInventory(p, 54, ChatColor.GREEN + "" + ChatColor.BOLD + "Gamerule GUI Manager");
 
         //add items from the Gamerules classes.
         gui.setItem(0, Getter.announceAdvancements());
@@ -89,8 +89,8 @@ public class GUI {
             gui.setItem(35, Getter.doWardenSpawning());
         }
 
-        gui.setItem(36, backButton());
-
+        gui.setItem(45, backButton());
+        gui.setItem(53, exitButton());
         return gui;
     }
 
@@ -107,6 +107,8 @@ public class GUI {
             else if (worldtype.equalsIgnoreCase("THE_END"))
                 world_selector.addItem(worldCreator("END", world.getName()));
         }
+
+        world_selector.setItem(35, exitButton());
 
 
         return world_selector;
@@ -149,5 +151,14 @@ public class GUI {
         backButton.setItemMeta(backButtonmeta);
 
         return backButton;
+    }
+
+    private ItemStack exitButton(){
+        ItemStack exitButton = new ItemStack(Material.BARRIER,1);
+        ItemMeta exitButtonmeta = exitButton.getItemMeta();
+        exitButtonmeta.setDisplayName(ChatColor.RED + "EXIT");
+        exitButton.setItemMeta(exitButtonmeta);
+
+        return exitButton;
     }
 }

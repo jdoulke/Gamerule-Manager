@@ -24,10 +24,12 @@ public class GuiCommand implements CommandExecutor {
         if(sender instanceof Player ){
             //get player
             Player p = (Player) sender;
-            if(p.hasPermission("gamerulemanager.use"))
+            if(p.hasPermission("gamerulemanager.use")) {
                 p.openInventory(GUI.guiBuilder(p));
-            else
+                p.playSound(p,Sound.ENTITY_VILLAGER_WORK_WEAPONSMITH, 1,1);
+            }else
                 p.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
+                p.playSound(p, Sound.ENTITY_VILLAGER_NO, 1,1);
         }
 
         return false;

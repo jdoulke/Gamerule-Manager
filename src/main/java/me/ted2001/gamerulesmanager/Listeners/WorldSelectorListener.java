@@ -44,6 +44,10 @@ public class WorldSelectorListener implements Listener {
                     p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 1, 1);
                     p.openInventory(GUI.gameruleSetterGui(p,world));
                 }
+                if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "EXIT")) {
+                    p.closeInventory();
+                    p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_CELEBRATE, 1,1);
+                }
 
             }
         } catch (NullPointerException ex) {}

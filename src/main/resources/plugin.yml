@@ -1,5 +1,5 @@
 name: GamerulesManager
-version: 2.0
+version: 2.1
 main: me.ted2001.gamerulesmanager.GameruleManager
 api-version: 1.13
 authors: [ Ted_2001 ]

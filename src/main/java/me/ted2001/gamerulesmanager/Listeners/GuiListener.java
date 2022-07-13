@@ -30,7 +30,7 @@ public class GuiListener implements Listener {
     @SuppressWarnings("rawtypes")
     private void booleanGameruleSet(GameRule<Boolean> rule, boolean value, World world, Player p){
         world.setGameRule(rule,value);
-        p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
+        p.playSound(p, Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
     }
 
 
@@ -313,8 +313,12 @@ public class GuiListener implements Listener {
                     }
                 }else if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "Get Back in World Selection.")) {
                         p.openInventory(GUI.guiBuilder(p));
-                        p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 1, 1);
+                        p.playSound(p, Sound.BLOCK_ANVIL_USE, 1, 1);
+                }else if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "EXIT")) {
+                    p.closeInventory();
+                    p.playSound(p, Sound.ENTITY_VILLAGER_CELEBRATE, 1,1);
                 }
+
 
 
             }
@@ -335,24 +339,19 @@ public class GuiListener implements Listener {
                     }
                     switch (gamerule) {
                         case "randomTickSpeed":
-                            w.setGameRule(GameRule.RANDOM_TICK_SPEED, value);
-                            p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
+                            integerGameruleSetter(GameRule.RANDOM_TICK_SPEED, value, w, p);
                             return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "spawnRadius":
-                            w.setGameRule(GameRule.SPAWN_RADIUS, value);
-                            p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
+                            integerGameruleSetter(GameRule.SPAWN_RADIUS, value, w, p);
                             return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "maxEntityCramming":
-                            w.setGameRule(GameRule.MAX_ENTITY_CRAMMING, value);
-                            p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
+                            integerGameruleSetter(GameRule.MAX_ENTITY_CRAMMING, value, w, p);
                             return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "maxCommandChainLength":
-                            w.setGameRule(GameRule.MAX_COMMAND_CHAIN_LENGTH, value);
-                            p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
+                            integerGameruleSetter(GameRule.MAX_COMMAND_CHAIN_LENGTH, value, w, p);
                             return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         case "playersSleepingPercentage":
-                                w.setGameRule(GameRule.PLAYERS_SLEEPING_PERCENTAGE, value);
-                                p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
+                                integerGameruleSetter(GameRule.PLAYERS_SLEEPING_PERCENTAGE, value, w, p);
                                 return AnvilGUI.Response.openInventory(GUI.gameruleSetterGui(p,WorldSelected));
                         }
                     return null;
@@ -362,6 +361,11 @@ public class GuiListener implements Listener {
                 .title("Enter your value.")
                 .plugin(GameruleManager.getPlugin())
                 .open(p);
+    }
+
+    private void integerGameruleSetter(GameRule<Integer> gamerule, int value, World w,Player p){
+        w.setGameRule(gamerule, value);
+        p.playSound(p, Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
     }
 
     private ItemStack getItem(){
