@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -27,6 +28,7 @@ public class SpawnRadius {
         ItemStack spawnRadius = new ItemStack(Material.RED_BED, 1);
         ItemMeta spawnRadiussmeta = spawnRadius.getItemMeta();
         spawnRadiussmeta.setDisplayName(ChatColor.RED + "spawnRadius");
+        spawnRadiussmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DESTROYS);
         lore.add("Gamerule is currently set to: " + ChatColor.GREEN + "" + ChatColor.BOLD + playerworld.getGameRuleValue(GameRule.SPAWN_RADIUS));
         lore.add("");
         lore.add("The number of blocks outward");

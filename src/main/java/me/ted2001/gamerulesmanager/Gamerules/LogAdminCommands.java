@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -30,6 +31,7 @@ public class LogAdminCommands {
         ItemMeta logAdminCommandsmeta = logAdminCommands.getItemMeta();
 
         logAdminCommandsmeta.setDisplayName(ChatColor.RED + "logAdminCommands");
+        logAdminCommandsmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DESTROYS);
         if(playerworld.getGameRuleValue(GameRule.LOG_ADMIN_COMMANDS)){
             lore.add("Gamerule is currently set to: " + ChatColor.GREEN + "" + ChatColor.BOLD + "True");
 

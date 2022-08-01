@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -27,6 +28,7 @@ public class MaxCommandChainLength {
         ItemStack maxCommandChainLength = new ItemStack(Material.CHAIN_COMMAND_BLOCK, 1);
         ItemMeta maxCommandChainLengthmeta = maxCommandChainLength.getItemMeta();
         maxCommandChainLengthmeta.setDisplayName(ChatColor.RED + "maxCommandChainLength");
+        maxCommandChainLengthmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DESTROYS);
         lore.add("Gamerule is currently set to: " + ChatColor.GREEN + "" + ChatColor.BOLD + playerworld.getGameRuleValue(GameRule.MAX_COMMAND_CHAIN_LENGTH));
         lore.add("");
         lore.add("The maximum length of a chain");

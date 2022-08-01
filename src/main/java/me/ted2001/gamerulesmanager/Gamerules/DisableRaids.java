@@ -4,6 +4,7 @@ import me.ted2001.gamerulesmanager.Listeners.WorldSelectorListener;
 import org.bukkit.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -24,7 +25,7 @@ public class DisableRaids {
             ItemStack disableRaids = new ItemStack(Material.CROSSBOW);
             ItemMeta disableRaidsmeta = disableRaids.getItemMeta();
             disableRaidsmeta.setDisplayName(ChatColor.RED + "disableRaids");
-
+            disableRaidsmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DESTROYS);
             if (playerworld.getGameRuleValue(GameRule.DISABLE_RAIDS)) {
                 lore.add("Gamerule is currently set to: " + ChatColor.GREEN + "" + ChatColor.BOLD + "True");
 

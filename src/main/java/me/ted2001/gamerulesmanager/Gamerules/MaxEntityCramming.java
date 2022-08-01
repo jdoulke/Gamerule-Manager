@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -27,6 +28,7 @@ public class MaxEntityCramming {
         ItemStack maxEntityCramming = new ItemStack(Material.ZOMBIE_HEAD, 1);
         ItemMeta maxEntityCrammingmeta = maxEntityCramming.getItemMeta();
         maxEntityCrammingmeta.setDisplayName(ChatColor.RED + "maxEntityCramming");
+        maxEntityCrammingmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DESTROYS);
         lore.add("Gamerule is currently set to: " + ChatColor.GREEN + "" + ChatColor.BOLD + playerworld.getGameRuleValue(GameRule.MAX_ENTITY_CRAMMING));
         lore.add("");
         lore.add("The maximum number of pushable");

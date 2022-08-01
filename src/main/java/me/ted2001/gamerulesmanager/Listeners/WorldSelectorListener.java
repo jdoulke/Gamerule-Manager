@@ -1,27 +1,22 @@
 package me.ted2001.gamerulesmanager.Listeners;
 
 import me.ted2001.gamerulesmanager.GUI.GUI;
-import me.ted2001.gamerulesmanager.Gamerules.GameruleGetter;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+
+import static me.ted2001.gamerulesmanager.GameruleManager.Serverversion;
 
 
 public class WorldSelectorListener implements Listener {
 
-    public World getWorldSelected() {
-        return WorldSelected;
-    }
 
     public static World WorldSelected;
     private GUI GUI = new GUI();
-    private ItemStack Normal = new ItemStack(Material.GRASS_BLOCK);
-    private ItemStack Nether = new ItemStack(Material.NETHERRACK);
-    private ItemStack End = new ItemStack(Material.END_STONE);
+
 
     public void setWorldSelected(World worldSelected) {
         WorldSelected = worldSelected;
@@ -46,7 +41,10 @@ public class WorldSelectorListener implements Listener {
                 }
                 if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "EXIT")) {
                     p.closeInventory();
-                    p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_CELEBRATE, 1,1);
+                    if(Integer.parseInt(Serverversion) >= 14)
+                        p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_CELEBRATE, 1,1);
+                    else
+                        p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_YES, 1,1);
                 }
 
             }

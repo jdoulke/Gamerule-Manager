@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -27,6 +28,7 @@ public class AnnounceAdvancements {
         ItemStack announceAdvancements = new ItemStack(Material.BOOK,1);
         ItemMeta announceAdvancementsmeta = announceAdvancements.getItemMeta();
         announceAdvancementsmeta.setDisplayName(ChatColor.RED + "announceAdvancements");
+        announceAdvancementsmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DESTROYS);
         if(playerworld.getGameRuleValue(GameRule.ANNOUNCE_ADVANCEMENTS)){
             lore.add("Gamerule is currently set to: " + ChatColor.GREEN + "" + ChatColor.BOLD + "True");
 
